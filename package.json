@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "preview": "npx wrangler pages dev public --port 8788"
+    "preview": "npx wrangler pages dev public --port 8788",
+    "deploy": "npx wrangler pages deploy public --project-name=rainey-property-group"
   },
   "keywords": [
     "real-estate",
@@ -22,6 +23,6 @@
     "node": ">=18.0.0"
   },
   "devDependencies": {
-    "wrangler": "^3.0.0"
+    "wrangler": "^4.0.0"
   }
 }
