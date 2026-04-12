@@ -1,0 +1,8 @@
+# Cloudflare Pages _redirects
+# Docs: https://developers.cloudflare.com/pages/configuration/redirects/
+
+# Redirect www to non-www (update YOUR_DOMAIN)
+# https://www.raineyproperty.com/* https://raineyproperty.com/:splat 301
+
+# Fallback — serve index.html for any unmatched route (SPA fallback)
+/* /index.html 200

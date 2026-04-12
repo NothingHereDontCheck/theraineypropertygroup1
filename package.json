@@ -1,0 +1,27 @@
+{
+  "name": "rainey-property-group",
+  "version": "1.0.0",
+  "description": "The Rainey Property Group — New Construction Specialists, Atlanta Metro Georgia",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "preview": "npx wrangler pages dev public --port 8788"
+  },
+  "keywords": [
+    "real-estate",
+    "new-construction",
+    "atlanta",
+    "georgia",
+    "rainey-property-group"
+  ],
+  "author": "The Rainey Property Group",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}

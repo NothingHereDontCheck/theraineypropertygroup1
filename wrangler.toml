@@ -1,0 +1,36 @@
+# wrangler.toml — Cloudflare Pages configuration
+# Docs: https://developers.cloudflare.com/pages/
+
+name = "rainey-property-group"
+compatibility_date = "2024-01-01"
+
+# -------------------------------------------------------
+# Cloudflare Pages — Static Site Deployment
+# -------------------------------------------------------
+# pages_build_output_dir tells Cloudflare Pages which
+# folder to serve. For this static site, that is /public.
+pages_build_output_dir = "public"
+
+# -------------------------------------------------------
+# Custom Headers (security + performance)
+# These are applied via a _headers file in /public,
+# but you can also enforce them here for Workers usage.
+# -------------------------------------------------------
+
+# -------------------------------------------------------
+# Environment Variables
+# Add any non-secret runtime config here.
+# Secrets should be set via the Cloudflare dashboard.
+# -------------------------------------------------------
+[vars]
+ENVIRONMENT = "production"
+SITE_NAME = "The Rainey Property Group"
+
+# -------------------------------------------------------
+# Preview environment (maps to preview deployments)
+# -------------------------------------------------------
+[env.preview]
+name = "rainey-property-group-preview"
+
+[env.preview.vars]
+ENVIRONMENT = "preview"
