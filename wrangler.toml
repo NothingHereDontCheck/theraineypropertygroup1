@@ -11,6 +11,11 @@ compatibility_date = "2024-01-01"
 # folder to serve. For this static site, that is /public.
 pages_build_output_dir = "public"
 
+# Required if anything runs `wrangler deploy` (Workers). Pages uploads still use
+# pages_build_output_dir; CLI Pages deploy: `npx wrangler pages deploy public`.
+[assets]
+directory = "./public"
+
 # -------------------------------------------------------
 # Custom Headers (security + performance)
 # These are applied via a _headers file in /public,
