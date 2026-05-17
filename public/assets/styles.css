@@ -482,12 +482,18 @@ section { padding: 7rem 4rem; }
   position: relative;
 }
 
-.ci-alpharetta  { background: linear-gradient(135deg, #2A3D2E 0%, #1A2C20 100%); }
-.ci-marietta    { background: linear-gradient(135deg, #2E3A2A 0%, #1E2918 100%); }
-.ci-cumming     { background: linear-gradient(135deg, #243529 0%, #16231A 100%); }
-.ci-woodstock   { background: linear-gradient(135deg, #2B3B25 0%, #1C2A18 100%); }
-.ci-smyrna      { background: linear-gradient(135deg, #26362A 0%, #17251C 100%); }
-.ci-johns-creek { background: linear-gradient(135deg, #283A2C 0%, #192819 100%); }
+.ci-alpharetta    { background: linear-gradient(135deg, #2A3D2E 0%, #1A2C20 100%); }
+.ci-marietta      { background: linear-gradient(135deg, #2E3A2A 0%, #1E2918 100%); }
+.ci-cumming       { background: linear-gradient(135deg, #243529 0%, #16231A 100%); }
+.ci-woodstock     { background: linear-gradient(135deg, #2B3B25 0%, #1C2A18 100%); }
+.ci-smyrna        { background: linear-gradient(135deg, #26362A 0%, #17251C 100%); }
+.ci-johns-creek   { background: linear-gradient(135deg, #283A2C 0%, #192819 100%); }
+.ci-roswell       { background: linear-gradient(135deg, #2C3D30 0%, #1B2C22 100%); }
+.ci-kennesaw      { background: linear-gradient(135deg, #253325 0%, #172417 100%); }
+.ci-canton        { background: linear-gradient(135deg, #2A3828 0%, #1B2A1A 100%); }
+.ci-buford        { background: linear-gradient(135deg, #223022 0%, #142214 100%); }
+.ci-peachtree-city{ background: linear-gradient(135deg, #2D3F2A 0%, #1D2E1A 100%); }
+.ci-gainesville   { background: linear-gradient(135deg, #243628 0%, #162619 100%); }
 
 .community-price-tag {
   position: absolute;
@@ -773,6 +779,162 @@ footer {
   text-decoration: none;
   font-size: 0.72rem;
 }
+
+/* ---- COMMUNITIES PAGE ---- */
+
+.comm-hero {
+  background: linear-gradient(160deg, #1E2E22 0%, #0F1A11 100%);
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 9rem 3rem 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.comm-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Crect width='60' height='60' fill='none'/%3E%3Cpath d='M0 60L60 0M-10 10L10-10M50 70L70 50' stroke='rgba(184,151,90,0.06)' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+.comm-hero-inner { position: relative; max-width: 720px; }
+
+/* IDX Search Section */
+.idx-section { background: var(--white); }
+
+.idx-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.idx-copy p {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--mist);
+  margin-bottom: 1.25rem;
+  font-weight: 300;
+}
+
+.idx-cta-group { margin-top: 0.5rem; }
+
+.idx-features-panel {
+  background: var(--forest);
+  border-radius: 4px;
+  padding: 2.5rem;
+}
+
+.idx-features-header {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.idx-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.idx-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: rgba(248,245,239,0.7);
+}
+
+.idx-feature-icon { font-size: 1rem; }
+
+.idx-panel-btn {
+  display: block;
+  text-align: center;
+  background: var(--gold);
+  color: var(--forest);
+  padding: 0.9rem 1.5rem;
+  border-radius: 2px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.idx-panel-btn:hover { background: #cfa96a; }
+
+/* Market Snapshot */
+.comm-market { background: var(--cream); }
+
+.comm-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.comm-stat-card {
+  background: var(--white);
+  border: 1px solid rgba(184,151,90,0.2);
+  border-top: 3px solid var(--gold);
+  border-radius: 2px;
+  padding: 2rem 1.5rem;
+}
+
+.comm-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--forest);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.comm-stat-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.comm-stat-card p {
+  font-size: 0.8rem;
+  line-height: 1.65;
+  color: var(--mist);
+}
+
+/* Communities grid on communities page — 4 columns */
+.comm-page-grid { grid-template-columns: repeat(4, 1fr); }
+
+/* What to Expect */
+.comm-expect { background: var(--white); }
+
+.comm-expect-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.comm-expect-copy p {
+  font-size: 0.92rem;
+  line-height: 1.9;
+  color: var(--mist);
+  margin-bottom: 1.25rem;
+  font-weight: 300;
+}
+
+.comm-expect-cards { display: grid; gap: 1.25rem; }
 
 /* ---- DOWN PAYMENT ASSISTANCE PAGE ---- */
 
@@ -1161,8 +1323,12 @@ footer {
 /* ---- RESPONSIVE ---- */
 @media (max-width: 1024px) {
   .community-grid { grid-template-columns: repeat(2, 1fr); }
+  .comm-page-grid { grid-template-columns: repeat(2, 1fr); }
+  .comm-stats-grid { grid-template-columns: repeat(2, 1fr); }
   .process-grid { grid-template-columns: repeat(2, 1fr); }
   .process-step::after { display: none; }
+  .idx-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .comm-expect-inner { grid-template-columns: 1fr; gap: 3rem; }
   .dpa-programs-grid { grid-template-columns: 1fr; }
   .dpa-what-inner { grid-template-columns: 1fr; gap: 3rem; }
   .dpa-nc-inner { grid-template-columns: 1fr; gap: 3rem; }
@@ -1179,6 +1345,9 @@ footer {
   .why-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .communities-intro { grid-template-columns: 1fr; gap: 1.5rem; }
   .community-grid { grid-template-columns: 1fr; }
+  .comm-page-grid { grid-template-columns: 1fr; }
+  .comm-stats-grid { grid-template-columns: 1fr; }
+  .idx-features-grid { grid-template-columns: 1fr; }
   .about { grid-template-columns: 1fr; }
   .about-img { min-height: 300px; }
   .about-copy { padding: 3rem 1.5rem; }
