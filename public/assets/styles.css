@@ -106,20 +106,26 @@ nav {
 /* ---- HERO ---- */
 .hero {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding-top: 5rem;
   position: relative;
   overflow: hidden;
+  background: var(--ivory);
 }
 
 .hero-left {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5rem 3rem 5rem 4rem;
+  align-items: center;
+  text-align: center;
+  padding: 5rem 3rem;
   position: relative;
   z-index: 2;
+  max-width: 900px;
+  width: 100%;
 }
 
 .hero-eyebrow {
@@ -161,8 +167,8 @@ nav {
   font-size: 0.95rem;
   line-height: 1.8;
   color: var(--mist);
-  max-width: 400px;
-  margin-bottom: 2.5rem;
+  max-width: 520px;
+  margin: 0 auto 2.5rem;
   font-weight: 300;
 }
 
@@ -170,6 +176,7 @@ nav {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn-primary {
@@ -234,10 +241,6 @@ nav {
 }
 
 .hero-stat-block {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 2.5rem;
-  right: 2.5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
@@ -245,12 +248,14 @@ nav {
   border: 1px solid rgba(184,151,90,0.2);
   border-radius: 2px;
   overflow: hidden;
+  margin-top: 2.5rem;
+  width: 100%;
+  max-width: 420px;
 }
 
 .hero-stat {
-  background: rgba(15,30,17,0.7);
+  background: var(--cream);
   padding: 1.25rem 1rem;
-  backdrop-filter: blur(8px);
   text-align: center;
 }
 
@@ -267,7 +272,7 @@ nav {
   font-size: 0.65rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(248,245,239,0.55);
+  color: var(--mist);
 }
 
 .hero-listings-widget {
@@ -782,20 +787,7 @@ footer {
   .nav-links.open { display: flex; }
   .nav-mobile-toggle { display: block; }
   section { padding: 5rem 1.5rem; }
-  .hero { grid-template-columns: 1fr; }
-  .hero-left { order: 1; padding: 5rem 1.5rem 3rem; }
-  .hero-right {
-    order: 2;
-    min-height: 480px;
-  }
-  .hero-listings-widget {
-    top: 1.75rem;
-    right: 1rem;
-    left: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-  }
+  .hero-left { padding: 5rem 1.5rem 3rem; }
   .why-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .communities-intro { grid-template-columns: 1fr; gap: 1.5rem; }
   .community-grid { grid-template-columns: 1fr; }
