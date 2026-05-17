@@ -786,7 +786,7 @@ footer {
   background: linear-gradient(160deg, #1E2E22 0%, #0F1A11 100%);
   min-height: 60vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   text-align: center;
   padding: 9rem 3rem 6rem;
@@ -942,7 +942,7 @@ footer {
   background: linear-gradient(160deg, #1E2E22 0%, #0F1A11 100%);
   min-height: 65vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   text-align: center;
   padding: 9rem 3rem 6rem;
