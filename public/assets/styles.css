@@ -785,11 +785,8 @@ footer {
 .comm-hero {
   background: linear-gradient(160deg, #1E2E22 0%, #0F1A11 100%);
   min-height: 60vh;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  padding: 10rem 3rem 6rem;
   text-align: center;
-  padding: 9rem 3rem 6rem;
   position: relative;
   overflow: hidden;
 }
@@ -801,7 +798,7 @@ footer {
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Crect width='60' height='60' fill='none'/%3E%3Cpath d='M0 60L60 0M-10 10L10-10M50 70L70 50' stroke='rgba(184,151,90,0.06)' stroke-width='1'/%3E%3C/svg%3E");
 }
 
-.comm-hero-inner { position: relative; max-width: 720px; }
+.comm-hero-inner { position: relative; max-width: 720px; margin: 0 auto; }
 
 /* IDX Search Section */
 .idx-section { background: var(--white); }
@@ -873,7 +870,13 @@ footer {
 .idx-panel-btn:hover { background: #cfa96a; }
 
 /* Market Snapshot */
-.comm-market { background: var(--cream); }
+.comm-market {
+  background: var(--forest);
+}
+
+.comm-market .section-label { color: rgba(184,151,90,0.7); }
+.comm-market .section-title { color: var(--ivory); }
+.comm-market .section-title em { color: var(--gold); }
 
 .comm-stats-grid {
   display: grid;
@@ -883,7 +886,7 @@ footer {
 }
 
 .comm-stat-card {
-  background: var(--white);
+  background: rgba(255,255,255,0.05);
   border: 1px solid rgba(184,151,90,0.2);
   border-top: 3px solid var(--gold);
   border-radius: 2px;
@@ -894,7 +897,7 @@ footer {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.4rem;
   font-weight: 600;
-  color: var(--forest);
+  color: var(--gold);
   line-height: 1;
   margin-bottom: 0.4rem;
 }
@@ -903,14 +906,14 @@ footer {
   font-size: 0.68rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: rgba(184,151,90,0.6);
   margin-bottom: 0.75rem;
 }
 
 .comm-stat-card p {
   font-size: 0.8rem;
   line-height: 1.65;
-  color: var(--mist);
+  color: rgba(248,245,239,0.45);
 }
 
 /* Communities grid on communities page — 4 columns */
@@ -941,11 +944,8 @@ footer {
 .dpa-hero {
   background: linear-gradient(160deg, #1E2E22 0%, #0F1A11 100%);
   min-height: 65vh;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  padding: 10rem 3rem 6rem;
   text-align: center;
-  padding: 9rem 3rem 6rem;
   position: relative;
   overflow: hidden;
 }
@@ -957,7 +957,7 @@ footer {
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Crect width='60' height='60' fill='none'/%3E%3Cpath d='M0 60L60 0M-10 10L10-10M50 70L70 50' stroke='rgba(184,151,90,0.06)' stroke-width='1'/%3E%3C/svg%3E");
 }
 
-.dpa-hero-inner { position: relative; max-width: 720px; }
+.dpa-hero-inner { position: relative; max-width: 720px; margin: 0 auto; }
 
 .dpa-eyebrow {
   font-size: 0.72rem;
@@ -1026,6 +1026,76 @@ footer {
   color: var(--forest);
 }
 
+/* Hero badge pills */
+.hero-badge-group {
+  display: flex;
+  gap: 0.65rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.hero-badge {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(248,245,239,0.6);
+  border: 1px solid rgba(184,151,90,0.3);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* Pull-quote block */
+.pull-quote {
+  border-left: 3px solid var(--gold);
+  background: var(--ivory);
+  padding: 1.5rem 1.75rem;
+  margin: 2rem 0 0;
+  border-radius: 0 2px 2px 0;
+}
+
+.pull-quote p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--forest);
+  line-height: 1.55;
+  margin: 0 0 0.5rem;
+}
+
+.pull-quote cite {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-style: normal;
+}
+
+/* Info highlight box */
+.info-highlight {
+  background: var(--forest);
+  color: var(--ivory);
+  border-radius: 2px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.info-highlight h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.info-highlight p {
+  font-size: 0.82rem;
+  line-height: 1.75;
+  color: rgba(248,245,239,0.65);
+  margin: 0;
+}
+
 /* What Is DPA */
 .dpa-what { background: var(--white); }
 
@@ -1078,7 +1148,7 @@ footer {
 }
 
 /* Programs */
-.dpa-programs { background: var(--ivory); text-align: center; }
+.dpa-programs { background: var(--cream); text-align: center; }
 
 .dpa-programs-grid {
   display: grid;
