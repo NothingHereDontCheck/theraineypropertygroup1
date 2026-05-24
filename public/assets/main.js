@@ -27,7 +27,8 @@ window.addEventListener('scroll', () => {
 const fadeEls = document.querySelectorAll(
   '.why-card, .community-card, .process-step, .about-detail, ' +
   '.dpa-fact-card, .dpa-program-card, .dpa-qualify-item, ' +
-  '.pull-quote, .info-highlight, .dpa-nc-copy, .dpa-qualify-note'
+  '.pull-quote, .info-highlight, .dpa-nc-copy, .dpa-qualify-note, ' +
+  '.comm-stat-card, .idx-feature-item, .idx-features-panel, .comm-expect-copy'
 );
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -59,7 +60,7 @@ document.querySelectorAll('.pull-quote').forEach(el => {
 });
 
 // Number counter for DPA fact cards
-const counterEls = document.querySelectorAll('.dpa-fact-num');
+const counterEls = document.querySelectorAll('.dpa-fact-num, .comm-stat-num');
 if (counterEls.length) {
   const counterObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {

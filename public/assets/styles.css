@@ -990,6 +990,12 @@ footer {
   gap: 0.6rem;
   font-size: 0.82rem;
   color: rgba(248,245,239,0.7);
+  transition: color 0.2s, transform 0.2s;
+}
+
+.idx-feature-item:hover {
+  color: rgba(248,245,239,1);
+  transform: translateX(3px);
 }
 
 .idx-feature-icon { font-size: 1rem; }
@@ -1010,7 +1016,14 @@ footer {
   transition: background 0.2s;
 }
 
-.idx-panel-btn:hover { background: #cfa96a; }
+.idx-panel-btn:hover {
+  background: #cfa96a;
+  animation: none;
+}
+
+.idx-panel-btn {
+  animation: dpaPulseRing 2.4s ease 0.5s infinite;
+}
 
 /* Market Snapshot */
 .comm-market {
@@ -1034,6 +1047,12 @@ footer {
   border-top: 3px solid var(--gold);
   border-radius: 2px;
   padding: 2rem 1.5rem;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.comm-stat-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.09);
 }
 
 .comm-stat-num {
