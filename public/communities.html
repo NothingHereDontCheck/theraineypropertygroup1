@@ -12,7 +12,36 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/styles.css" />
+<link rel="stylesheet" href="/assets/styles.css?v=3" />
+<style>
+/* ── Communities page animations ─────────────────────────── */
+@keyframes cFadeUp  { from{opacity:0;transform:translateY(26px)} to{opacity:1;transform:translateY(0)} }
+@keyframes cPop     { from{opacity:0;transform:scale(0.88)}      to{opacity:1;transform:scale(1)}      }
+@keyframes cPulse   { 0%{box-shadow:0 0 0 0 rgba(184,151,90,.55)} 70%{box-shadow:0 0 0 14px rgba(184,151,90,0)} 100%{box-shadow:0 0 0 0 rgba(184,151,90,0)} }
+
+/* Hero entrance — staggered */
+.dpa-eyebrow    { animation: cFadeUp .6s ease both; }
+.dpa-h1         { animation: cFadeUp .7s ease .18s both; }
+.dpa-sub        { animation: cFadeUp .65s ease .34s both; }
+.btn-dpa-hero   { animation: cFadeUp .6s ease .5s both, cPulse 2.2s ease 1.8s 3; }
+.hero-badge-group { animation: cFadeUp .5s ease .7s both; }
+
+/* Market stat cards */
+.comm-stat-card { transition: transform .25s ease, background .25s ease; }
+.comm-stat-card:hover { transform: translateY(-5px); background: rgba(255,255,255,.09); }
+
+/* Community area cards */
+.community-card { transition: transform .25s ease, box-shadow .25s ease !important; }
+.community-card:hover { transform: translateY(-5px) !important; box-shadow: 0 18px 44px rgba(30,46,34,.14) !important; }
+
+/* IDX panel feature items */
+.idx-feature-item { transition: color .2s, transform .2s; }
+.idx-feature-item:hover { color: rgba(248,245,239,1); transform: translateX(4px); }
+
+/* IDX panel CTA pulse */
+.idx-panel-btn { animation: cPulse 2.4s ease .5s infinite; }
+.idx-panel-btn:hover { animation: none; }
+</style>
 </head>
 <body>
 
@@ -241,6 +270,69 @@
   </div>
 </footer>
 
-<script src="/assets/main.js"></script>
+<script src="/assets/main.js?v=2"></script>
+<script>
+(function () {
+  // ── Scroll-reveal with sibling stagger ──────────────────
+  var revealTargets = document.querySelectorAll(
+    '.community-card, .comm-stat-card, .why-card, ' +
+    '.idx-feature-item, .idx-features-panel, ' +
+    '.pull-quote, .comm-expect-copy, .idx-copy'
+  );
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.1 });
+
+  revealTargets.forEach(function (el) {
+    var siblings = el.parentElement
+      ? Array.from(el.parentElement.children).filter(function (c) {
+          return c.classList.contains(el.classList[0]);
+        })
+      : [];
+    var idx = siblings.indexOf(el);
+    var delay = idx > 0 ? (idx * 0.09) + 's' : '0s';
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity .55s ease ' + delay + ', transform .55s ease ' + delay;
+    io.observe(el);
+  });
+
+  // ── Number counter for market stat cards ────────────────
+  var statNums = document.querySelectorAll('.comm-stat-num');
+  if (!statNums.length) return;
+
+  var counterIO = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var el = e.target;
+      var raw = el.textContent.trim();
+      var m = raw.match(/^(\D*)([\d,]+)(\D*)$/);
+      if (!m) return;
+      var prefix = m[1];
+      var target = parseInt(m[2].replace(/,/g, ''), 10);
+      var suffix = m[3];
+      var dur = 1400;
+      var t0 = null;
+      function step(ts) {
+        if (!t0) t0 = ts;
+        var p = Math.min((ts - t0) / dur, 1);
+        var v = 1 - Math.pow(1 - p, 3);
+        el.textContent = prefix + Math.round(v * target).toLocaleString() + suffix;
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+      counterIO.unobserve(el);
+    });
+  }, { threshold: 0.6 });
+
+  statNums.forEach(function (el) { counterIO.observe(el); });
+})();
+</script>
 </body>
 </html>
