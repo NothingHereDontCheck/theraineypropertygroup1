@@ -1084,6 +1084,29 @@ footer {
 
 /* ---- DOWN PAYMENT ASSISTANCE PAGE ---- */
 
+/* ---- DPA PAGE ANIMATIONS ---- */
+@keyframes dpaFadeUp {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes dpaPop {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes dpaSlideRight {
+  from { opacity: 0; transform: translateX(-22px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes dpaPulseRing {
+  0%   { box-shadow: 0 0 0 0 rgba(184,151,90,0.55); }
+  70%  { box-shadow: 0 0 0 14px rgba(184,151,90,0); }
+  100% { box-shadow: 0 0 0 0 rgba(184,151,90,0); }
+}
+@keyframes dpaBarGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
 .dpa-hero {
   background: linear-gradient(160deg, #1E2E22 0%, #0F1A11 100%);
   min-height: 65vh;
@@ -1188,6 +1211,16 @@ footer {
   border-radius: 20px;
   white-space: nowrap;
 }
+
+/* DPA hero entrance */
+.dpa-eyebrow { animation: dpaFadeUp 0.6s ease both; }
+.dpa-h1      { animation: dpaFadeUp 0.7s ease 0.18s both; }
+.dpa-sub     { animation: dpaFadeUp 0.65s ease 0.34s both; }
+.btn-dpa-hero {
+  animation: dpaFadeUp 0.6s ease 0.5s both,
+             dpaPulseRing 2.2s ease 1.8s 3;
+}
+.hero-badge-group { animation: dpaFadeUp 0.5s ease 0.7s both; }
 
 /* Pull-quote block */
 .pull-quote {
@@ -1306,6 +1339,12 @@ footer {
   border-top: 3px solid var(--gold);
   border-radius: 2px;
   padding: 2rem 1.75rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dpa-program-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(30,46,34,0.12);
 }
 
 .dpa-program-icon {
@@ -1418,6 +1457,13 @@ footer {
   border: 1px solid rgba(184,151,90,0.15);
   border-radius: 2px;
   padding: 1.5rem;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.dpa-qualify-item:hover {
+  transform: translateY(-3px);
+  border-color: rgba(184,151,90,0.4);
+  box-shadow: 0 8px 24px rgba(30,46,34,0.08);
 }
 
 .dpa-qualify-check {
@@ -1520,7 +1566,14 @@ footer {
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s;
+  animation: dpaPulseRing 2.4s ease 0s infinite;
+}
+
+.btn-dpa-cta:hover {
+  background: #cfa96a;
+  transform: scale(1.03);
+  animation: none;
 }
 
 .btn-dpa-cta:hover { background: #cfa96a; }
